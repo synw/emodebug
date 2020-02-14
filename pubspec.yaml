@@ -1,0 +1,11 @@
+name: emodebug
+description: Emoji based semantic debuging. Easy implementation of custom debug methods
+homepage: https://github.com/synw/emodebug
+version: 0.1.0
+
+environment:
+  sdk: ">=2.3.0 <3.0.0"
+
+dependencies:
+  pedantic: ^1.8.0
+  extra_pedantic: ^1.1.1+3

@@ -1,0 +1,9 @@
+name: emodebug_example
+version: 0.1.0
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  emodebug:
+    path: ../
