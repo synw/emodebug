@@ -25,6 +25,10 @@ void main() {
   _printLines(3);
   debug.update("Updating something");
   _printLines(2);
+  _printLines(1);
+  final data = {"foo": "bar"};
+  debug.data(data, "some data");
+  _printLines(2);
   debug.crash("A crash occured!!!");
   _printLines(4);
   debug.recovery("Recovery successful");
