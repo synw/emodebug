@@ -56,6 +56,9 @@ Available methods:
 
   /// A debug message for a class constructor
   debug.constructor(msg);
+
+  /// A debug message for a time related operation
+  debug.time(msg);
   ```
 
 ### Implement custom debug methods
