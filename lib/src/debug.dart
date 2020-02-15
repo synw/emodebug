@@ -39,6 +39,9 @@ class EmoDebug {
   /// A debug message for a class constructor
   void constructor(dynamic obj, [String domain]) => emo("🛠️", obj, domain);
 
+  /// A debug message for a time related operation
+  void time(dynamic obj, [String domain]) => emo("⏱️", obj, domain);
+
   /// Print a debug message from an emoji
   void emo(String emoji, dynamic obj, [String domain]) {
     var dm = "";
