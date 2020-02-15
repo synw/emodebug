@@ -1,6 +1,11 @@
 # Emodebug
 
-Emoji based semantic debuging. Easy implementation of custom debug methods
+Emoji based semantic debuging:
+
+- Debug the state and execution flow of your program using semantic idioms
+- Easy implementation of custom debug methods
+
+This is not for error management, you can use [Err](https://github.com/synw/err) and [ErrRouter](https://github.com/synw/err_router) to manage the error flow
 
 ![Screenshot](img/screenshot.png)
 
