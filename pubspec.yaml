@@ -1,5 +1,5 @@
 name: emodebug
-description: Emoji based semantic debuging. Easy implementation of custom debug methods
+description: Emoji based semantic debuging. Debug the state and execution flow of a program with familiar idioms
 homepage: https://github.com/synw/emodebug
 version: 0.1.0
 
