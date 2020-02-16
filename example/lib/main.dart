@@ -1,13 +1,20 @@
 import 'package:emodebug/emodebug.dart';
 
+/// The normal [EmoDebug] class initialization
 //const EmoDebug debug = EmoDebug();
+
+/// The custom implementation
 const CustomEmoDebug debug = CustomEmoDebug();
 
+/// A class that extends [EmoDebug] with custom methods
 class CustomEmoDebug extends EmoDebug {
+  /// The base constructor
   const CustomEmoDebug();
 
+  /// The crash method to indicate a program failure
   void crash(dynamic obj, [String domain]) => emo("💥", obj, domain);
 
+  /// The recovery method to indicate a program recovery
   void recovery(dynamic obj, [String domain]) => emo("👍", obj, domain);
 }
 
