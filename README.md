@@ -18,6 +18,10 @@ Looking at the console you get an intuitive global view on the execution flow:
 ### Existing debug methods
 
    ```dart
+   import 'package:emodebug/emodebug.dart';
+
+   const EmoDebug debug = EmoDebug();
+
    // use an existing method
    debug.save("Saving something");
    // or from an emoji using any object or a string
