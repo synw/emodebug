@@ -11,7 +11,7 @@ Looking at the console you get an intuitive global view on the execution flow:
 
 ![Screenshot](img/screenshot.png)
 
-Note: this is not for error management, you can use [Err](https://github.com/synw/err) and [ErrRouter](https://github.com/synw/err_router) to manage the error flow.
+Note: this is not for error management, you can use [Err](https://github.com/synw/err) and [ErrRouter](https://github.com/synw/err_router) to manage the errors.
 
 ## Usage
 
@@ -71,6 +71,19 @@ Available methods:
   /// A debug message for a time related operation
   debug.time(msg);
   ```
+
+#### Parameters
+
+The constructors accept any object as parameter (`dynamic`)
+
+An optional `domain` positional parameter is available for a more precise message:
+
+   ```dart
+   final data = {"foo": "bar"};
+   debug.data(data, "some data");
+   // output:
+   // 💼 Some data: {foo: bar}
+   ```
 
 ### Implement custom debug methods
 
