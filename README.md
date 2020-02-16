@@ -5,7 +5,7 @@
 Emoji based semantic debuging:
 
 - **Debug the state** and execution flow of your program using familiar idioms
-- Easy implementation of **custom debug methods**: extend the `EmoDebug` class to create your own methods
+- Easy implementation of **custom debug methods**: extend the [EmoDebug](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html) class to create your own methods
 
 Looking at the console you get an intuitive global view on the execution flow: 
 
