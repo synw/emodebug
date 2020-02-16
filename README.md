@@ -1,5 +1,7 @@
 # Emodebug
 
+[![pub package](https://img.shields.io/pub/v/emodebug.svg)](https://pub.dartlang.org/packages/emodebug)
+
 Emoji based semantic debuging:
 
 - **Debug the state** and execution flow of your program using familiar idioms
