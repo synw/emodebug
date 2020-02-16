@@ -74,7 +74,7 @@ Available methods:
 
 #### Parameters
 
-The constructors accept any object as parameter (`dynamic`)
+The methods accept any object as parameter (`dynamic`)
 
 An optional `domain` positional parameter is available for a more precise message:
 
