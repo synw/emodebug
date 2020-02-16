@@ -2,16 +2,16 @@
 
 Emoji based semantic debuging:
 
-- **Debug the state** and execution flow of your program using semantic idioms
+- **Debug the state** and execution flow of your program using familiar idioms
 - Easy implementation of **custom debug methods**: extend the `EmoDebug` class to create your own methods
 
-This is not for error management, you can use [Err](https://github.com/synw/err) and [ErrRouter](https://github.com/synw/err_router) to manage the error flow
+Note: this is not for error management, you can use [Err](https://github.com/synw/err) and [ErrRouter](https://github.com/synw/err_router) to manage the error flow.
+
+Looking at the console you get an intuitive global view on the execution flow: 
 
 ![Screenshot](img/screenshot.png)
 
 ## Usage
-
-
 
 ### Existing debug methods
 
