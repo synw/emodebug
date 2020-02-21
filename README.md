@@ -1,11 +1,11 @@
 # Emodebug
 
-[![pub package](https://img.shields.io/pub/v/emodebug.svg)](https://pub.dartlang.org/packages/emodebug)
+[![pub package](https://img.shields.io/pub/v/emodebug.svg)](https://pub.dartlang.org/packages/emodebug) [![doc](https://img.shields.io/badge/api-documentation-informational.svg)](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html#instance-methods)
 
 Emoji based semantic debuging:
 
 - **Debug the state** and execution flow of your program using familiar idioms
-- Easy implementation of **custom debug methods**: extend the [EmoDebug](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html) class to create your own methods
+- Easy implementation of **custom debug methods**: extend the [EmoDebug](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html#instance-methods) class to create your own methods
 
 Looking at the console you get an intuitive global view on the execution flow: 
 
@@ -29,7 +29,7 @@ Note: this is not for error management, you can use [Err](https://github.com/syn
    debug.emo("📢", obj);
    ```
 
-Available methods: check the [api documentation](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html)
+Available methods: check the  [api documentation](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html)
 
 #### Parameters
 
