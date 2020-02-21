@@ -1,7 +1,7 @@
 name: emodebug
 description: Emoji based semantic debuging. Debug the state and execution flow of a program with familiar idioms
 homepage: https://github.com/synw/emodebug
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: ">=2.3.0 <3.0.0"
