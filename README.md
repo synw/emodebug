@@ -31,7 +31,7 @@ Note: this is not for error management, you can use [Err](https://github.com/syn
 
 Available methods: check the  [api documentation](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html)
 
-#### Parameters
+### Parameters
 
 The methods accept any object as parameter (`dynamic`)
 
@@ -44,7 +44,18 @@ An optional `domain` positional parameter is available for a more precise messag
    // 💼 Some data: {foo: bar}
    ```
 
-### Implement custom debug methods
+## Scoped debuging and deactivation
+
+The recommended way is to use local `EmoDebug` instances to be able to enable and disable debug messages for a defined portion of code:
+
+   ```dart
+   // on top of a file
+   const EmoDebug debug = EmoDebug(deactivate: false);
+   ```
+
+To deactivate debug messages for this instance set to `true`
+
+## Implement custom debug methods
 
    ```dart
    const CustomEmoDebug debug = CustomEmoDebug();
@@ -61,3 +72,5 @@ An optional `domain` positional parameter is available for a more precise messag
    debug.crash("A crash occured!!!");
    debug.recovery("Recovery successful");
    ```
+
+
