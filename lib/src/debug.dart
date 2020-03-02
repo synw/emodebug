@@ -88,10 +88,40 @@ class EmoDebug {
   /// emoji: 📌
   void result(dynamic obj, [String domain]) => emo("📌", obj, domain);
 
+  /// A debug message for information an input operation
+  ///
+  /// emoji: 📥
+  void input(dynamic obj, [String domain]) => emo("📥", obj, domain);
+
+  /// A debug message for information an output operation
+  ///
+  /// emoji: 📤
+  void output(dynamic obj, [String domain]) => emo("📤", obj, domain);
+
   /// A debug message for a function
   ///
   /// emoji: 💊
-  void function(dynamic obj, [String domain]) => emo("", obj, domain);
+  void function(dynamic obj, [String domain]) => emo("💊", obj, domain);
+
+  /// A debug message for a key
+  ///
+  /// emoji: 🔑
+  void key(dynamic obj, [String domain]) => emo("🔑", obj, domain);
+
+  /// A debug message for an encryption operation
+  ///
+  /// emoji: 🎼
+  void encrypt(dynamic obj, [String domain]) => emo("🎼", obj, domain);
+
+  /// A debug message for an decryption operation
+  ///
+  /// emoji: 🗝️
+  void decrypt(dynamic obj, [String domain]) => emo("🗝️", obj, domain);
+
+  /// A debug message for an transmission operation
+  ///
+  /// emoji: 📡
+  void transmit(dynamic obj, [String domain]) => emo("📡", obj, domain);
 
   /// Print a debug message from an emoji
   void emo(String emoji, dynamic obj, [String domain]) {
