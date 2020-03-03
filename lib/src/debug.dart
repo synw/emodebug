@@ -11,144 +11,147 @@ class EmoDebug {
   /// A debug message for a state operation
   ///
   /// emoji: 📢
-  void state(dynamic obj, [String domain]) => emo("📢", obj, domain);
+  String state(dynamic obj, [String domain]) => emo("📢", obj, domain);
 
   /// A debug message for a save operation
   ///
   /// emoji: 💾
-  void save(dynamic obj, [String domain]) => emo("💾", obj, domain);
+  String save(dynamic obj, [String domain]) => emo("💾", obj, domain);
 
   /// A debug message for a delete operation
   ///
   /// emoji: ❌
-  void delete(dynamic obj, [String domain]) => emo("❌", obj, domain);
+  String delete(dynamic obj, [String domain]) => emo("❌", obj, domain);
 
   /// A debug message for a database query
   ///
   /// emoji: ❓
-  void query(dynamic obj, [String domain]) => emo("❓", obj, domain);
+  String query(dynamic obj, [String domain]) => emo("❓", obj, domain);
 
   /// A debug message for a dataset
   ///
   /// emoji: 💼
-  void data(dynamic obj, [String domain]) => emo("💼", obj, domain);
+  String data(dynamic obj, [String domain]) => emo("💼", obj, domain);
 
   /// A debug message representing a line
   ///
   /// emoji: ➖
-  void line(dynamic obj, [String domain]) => emo("➖", obj, domain);
+  String line(dynamic obj, [String domain]) => emo("➖", obj, domain);
 
   /// A debug message for an initialization
   ///
   /// emoji: 🎬
-  void init(dynamic obj, [String domain]) => emo("🎬", obj, domain);
+  String init(dynamic obj, [String domain]) => emo("🎬", obj, domain);
 
   /// A debug message for an update
   ///
   /// emoji: 🆙
-  void update(dynamic obj, [String domain]) => emo("🆙", obj, domain);
+  String update(dynamic obj, [String domain]) => emo("🆙", obj, domain);
 
   /// A debug message for an ok state
   ///
   /// emoji: 🆗
-  void ok(dynamic obj, [String domain]) => emo("🆗", obj, domain);
+  String ok(dynamic obj, [String domain]) => emo("🆗", obj, domain);
 
   /// A debug message for an build
   ///
   /// emoji: 🔧
-  void build(dynamic obj, [String domain]) => emo("🔧", obj, domain);
+  String build(dynamic obj, [String domain]) => emo("🔧", obj, domain);
 
   /// A debug message for parameters
   ///
   /// emoji: 📥
-  void param(dynamic obj, [String domain]) => emo("📥", obj, domain);
+  String param(dynamic obj, [String domain]) => emo("📥", obj, domain);
 
   /// A debug message for a class constructor
   ///
   /// emoji: 🛠️
-  void constructor(dynamic obj, [String domain]) => emo("🛠️", obj, domain);
+  String constructor(dynamic obj, [String domain]) => emo("🛠️", obj, domain);
 
   /// A debug message for a time related operation
   ///
   /// emoji: ⏱️
-  void time(dynamic obj, [String domain]) => emo("⏱️", obj, domain);
+  String time(dynamic obj, [String domain]) => emo("⏱️", obj, domain);
 
   /// A debug message for a not found status
   ///
   /// emoji: 🚫
-  void notFound(dynamic obj, [String domain]) => emo("🚫", obj, domain);
+  String notFound(dynamic obj, [String domain]) => emo("🚫", obj, domain);
 
   /// A debug message for a found status
   ///
   /// emoji: 👁️‍🗨️
-  void found(dynamic obj, [String domain]) => emo("👁️‍🗨️", obj, domain);
+  String found(dynamic obj, [String domain]) => emo("👁️‍🗨️", obj, domain);
 
   /// A debug message for a result
   ///
   /// emoji: 📌
-  void result(dynamic obj, [String domain]) => emo("📌", obj, domain);
+  String result(dynamic obj, [String domain]) => emo("📌", obj, domain);
 
   /// A debug message for information an input operation
   ///
   /// emoji: 📥
-  void input(dynamic obj, [String domain]) => emo("📥", obj, domain);
+  String input(dynamic obj, [String domain]) => emo("📥", obj, domain);
 
   /// A debug message for information an output operation
   ///
   /// emoji: 📤
-  void output(dynamic obj, [String domain]) => emo("📤", obj, domain);
+  String output(dynamic obj, [String domain]) => emo("📤", obj, domain);
 
   /// A debug message for a function
   ///
   /// emoji: 💊
-  void function(dynamic obj, [String domain]) => emo("💊", obj, domain);
+  String function(dynamic obj, [String domain]) => emo("💊", obj, domain);
 
   /// A debug message for a key
   ///
   /// emoji: 🔑
-  void key(dynamic obj, [String domain]) => emo("🔑", obj, domain);
+  String key(dynamic obj, [String domain]) => emo("🔑", obj, domain);
 
   /// A debug message for an encryption operation
   ///
   /// emoji: 🎼
-  void encrypt(dynamic obj, [String domain]) => emo("🎼", obj, domain);
+  String encrypt(dynamic obj, [String domain]) => emo("🎼", obj, domain);
 
   /// A debug message for an decryption operation
   ///
   /// emoji: 🗝️
-  void decrypt(dynamic obj, [String domain]) => emo("🗝️", obj, domain);
+  String decrypt(dynamic obj, [String domain]) => emo("🗝️", obj, domain);
 
   /// A debug message for an transmission operation
   ///
   /// emoji: 📡
-  void transmit(dynamic obj, [String domain]) => emo("📡", obj, domain);
+  String transmit(dynamic obj, [String domain]) => emo("📡", obj, domain);
 
   /// Print a debug message from an emoji
-  void emo(String emoji, dynamic obj, [String domain]) {
-    if (deactivate) {
-      return;
+  String emo(String emoji, dynamic obj, [String domain]) {
+    final msg = _getEmoString(emoji, obj, domain);
+    if (!deactivate) {
+      print(msg);
     }
-    print(_getEmoString(emoji, obj, domain));
+    return msg;
   }
 
   /// A separator line
-  void sep() {
-    if (deactivate) {
-      return;
+  String sep() {
+    const msg = "➖➖➖➖➖➖➖➖➖➖➖";
+    if (!deactivate) {
+      print(msg);
     }
-    print("➖➖➖➖➖➖➖➖➖➖➖");
+    return msg;
   }
 
   /// A section start
-  void section(String name) {
-    if (deactivate) {
-      return;
+  String section(String name) {
+    final msg = "➖➖➖➖➖ $name ➖➖➖➖➖";
+    if (!deactivate) {
+      print(msg);
     }
-    print("➖➖➖➖➖ $name ➖➖➖➖➖");
+    return msg;
   }
 
   /// A section end
-  void sectionEnd() => sep();
+  String sectionEnd() => sep();
 
   String _getEmoString(String emoji, dynamic obj, [String domain]) {
     var dm = "";
