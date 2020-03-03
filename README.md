@@ -5,7 +5,8 @@
 Emoji based semantic debuging:
 
 - **Debug the state** and execution flow of your program using familiar idioms
-- Easy implementation of **custom debug methods**: extend the [EmoDebug](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html#instance-methods) class to create your own methods
+- **Scoped debuging**: activate debug locally
+- Easy implementation of custom debug methods: extend the [EmoDebug](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html#instance-methods) class to create your own methods
 
 Looking at the console you get an intuitive global view on the execution flow: 
 
@@ -44,9 +45,21 @@ An optional `domain` positional parameter is available for a more precise messag
    // 💼 Some data: {foo: bar}
    ```
 
-## Scoped debuging and deactivation
+## Scoped debuging
 
-The recommended way is to use local `EmoDebug` instances to be able to enable and disable debug messages for a defined portion of code:
+The recommended way is to use local `EmoDebug` instances to be able to enable and disable debug messages for a defined portion of code. Use the `level` attribute to prefix the messages:
+
+   ```dart
+   const EmoDebug debug = EmoDebug(level: "http service");
+   // the messages will be prefixed by [http service] :
+   debug.notFound(path, "page not found");
+   // output:
+   // 🚫 [http service] Page not found: /some_page.html
+   ```
+
+## Deactivation
+
+It is possible to deactivate the printing of the messages for an instance:
 
    ```dart
    // on top of a file
