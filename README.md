@@ -63,10 +63,8 @@ It is possible to deactivate the printing of the messages for an instance:
 
    ```dart
    // on top of a file
-   const EmoDebug debug = EmoDebug(deactivate: false);
+   const EmoDebug debug = EmoDebug(deactivate: true);
    ```
-
-To deactivate debug messages for this instance set to `true`
 
 ## Implement custom debug methods
 
