@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+Add some emo methods
+
 ## 0.3.0
 
 - Add the `level` parameter
