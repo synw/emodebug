@@ -2,12 +2,14 @@
 class EmoDebug {
   /// Default constructor
   const EmoDebug(
-      {this.level, this.deactivate = false, this.deactivateEmojis = false});
+      {this.level,
+      this.deactivatePrint = false,
+      this.deactivateEmojis = false});
 
   /// Deactivate the debug session
   ///
   /// This will not print anything anymore
-  final bool deactivate;
+  final bool deactivatePrint;
 
   /// The debug level
   ///
@@ -130,15 +132,63 @@ class EmoDebug {
   /// emoji: 🗝️
   String decrypt([dynamic obj, String domain]) => emo("🗝️", obj, domain);
 
-  /// A debug message for an transmission operation
+  /// A debug message for a transmission operation
   ///
   /// emoji: 📡
   String transmit([dynamic obj, String domain]) => emo("📡", obj, domain);
 
+  /// A debug message for a start operation
+  ///
+  /// emoji: 🏁
+  String start([dynamic obj, String domain]) => emo("🏁", obj, domain);
+
+  /// A debug message for a stop operation
+  ///
+  /// emoji: 🛑
+  String stop([dynamic obj, String domain]) => emo("🛑", obj, domain);
+
+  /// A debug message for an info
+  ///
+  /// emoji: ℹ️
+  String info([dynamic obj, String domain]) => emo("ℹ️", obj, domain);
+
+  /// A debug message for a warning
+  ///
+  /// emoji: 🔔
+  String warning([dynamic obj, String domain]) => emo("🔔", obj, domain);
+
+  /// A debug message for a warning
+  ///
+  /// emoji: 💢
+  String error([dynamic obj, String domain]) => emo("💢", obj, domain);
+
+  /// A debug message woth an arrow
+  ///
+  /// emoji: =>
+  String arrowIn([dynamic obj, String domain]) => emo("=>", obj, domain);
+
+  /// A debug message woth an arrow
+  ///
+  /// emoji: <=
+  String arrowOut([dynamic obj, String domain]) => emo("<=", obj, domain);
+
+  /// A debug message woth an arrow
+  ///
+  /// emoji: ->
+  String smallArrowIn([dynamic obj, String domain]) => emo("->", obj, domain);
+
+  /// A debug message woth an arrow
+  ///
+  /// emoji: <-
+  String smallArrowOut([dynamic obj, String domain]) => emo("<-", obj, domain);
+
+  /// A simple message with no emoji
+  String msg([dynamic obj, String domain]) => emo(null, obj, domain);
+
   /// Print a debug message from an emoji
   String emo(String emoji, [dynamic obj, String domain]) {
     final msg = _getEmoString(emoji, obj, domain);
-    if (!deactivate) {
+    if (!deactivatePrint) {
       print(msg);
     }
     return msg;
@@ -147,7 +197,7 @@ class EmoDebug {
   /// A separator line
   String sep() {
     const msg = "➖➖➖➖➖➖➖➖➖➖➖";
-    if (!deactivate) {
+    if (!deactivatePrint) {
       print(msg);
     }
     return msg;
@@ -156,7 +206,7 @@ class EmoDebug {
   /// A section start
   String section(String name) {
     final msg = "➖➖➖➖➖ $name ➖➖➖➖➖";
-    if (!deactivate) {
+    if (!deactivatePrint) {
       print(msg);
     }
     return msg;
@@ -166,21 +216,22 @@ class EmoDebug {
   String sectionEnd() => sep();
 
   String _getEmoString(String emoji, dynamic obj, String domain) {
-    var str = "";
-    if (!deactivateEmojis) {
-      str = "$emoji";
+    final l = <String>[];
+    if (!deactivateEmojis && emoji != null) {
+      l.add("$emoji");
     }
     if (level != null) {
-      str += " [$level]";
+      l.add("[$level]");
     }
-    var dm = "";
     if (domain != null) {
-      dm += ' ${domain[0].toUpperCase()}${domain.substring(1)}: ';
+      final dm = '${domain[0].toUpperCase()}${domain.substring(1)}:';
+      l.add(dm);
     }
-    var res = "$str$dm";
     if (obj != null) {
-      res += " $obj";
+      l.add("$obj");
     }
-    return res;
+    //print("$obj ======= $emoji");
+    //print(l);
+    return l.join(" ");
   }
 }
