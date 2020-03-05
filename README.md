@@ -50,9 +50,9 @@ An optional `domain` positional parameter is available for a more precise messag
 The recommended way is to use local `EmoDebug` instances to be able to enable and disable debug messages for a defined portion of code. Use the `level` attribute to prefix the messages:
 
    ```dart
-   const EmoDebug debug = EmoDebug(level: "http service");
+   const EmoDebug _ = EmoDebug(level: "http service");
    // the messages will be prefixed by [http service] :
-   debug.notFound(path, "page not found");
+   _.notFound(path, "page not found");
    // output:
    // 🚫 [http service] Page not found: /some_page.html
    ```
