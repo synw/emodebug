@@ -1,8 +1,11 @@
+import 'types.dart';
+
 /// The debug printer
 class EmoDebug {
   /// Default constructor
   const EmoDebug(
       {this.level,
+      this.hook,
       this.deactivatePrint = false,
       this.deactivateEmojis = false});
 
@@ -16,6 +19,11 @@ class EmoDebug {
   /// An optional indication about a local debug area. It
   /// will prefix the messages
   final String level;
+
+  /// A hook to execute after each function call
+  ///
+  /// Can be used to pipe the emodebug messages to logging
+  final EmoDebugHook hook;
 
   /// Deactivate the emojis
   ///
@@ -162,25 +170,33 @@ class EmoDebug {
   /// emoji: 💢
   String error([dynamic obj, String domain]) => emo("💢", obj, domain);
 
-  /// A debug message woth an arrow
+  /// A debug message with an arrow
   ///
   /// emoji: =>
   String arrowIn([dynamic obj, String domain]) => emo("=>", obj, domain);
 
-  /// A debug message woth an arrow
+  /// A debug message with an arrow
   ///
   /// emoji: <=
   String arrowOut([dynamic obj, String domain]) => emo("<=", obj, domain);
 
-  /// A debug message woth an arrow
+  /// A debug message with an arrow
   ///
   /// emoji: ->
   String smallArrowIn([dynamic obj, String domain]) => emo("->", obj, domain);
 
-  /// A debug message woth an arrow
+  /// A debug message with an arrow
   ///
   /// emoji: <-
   String smallArrowOut([dynamic obj, String domain]) => emo("<-", obj, domain);
+
+  /// A debug message for a ready state
+  ///
+  /// emoji: ⏲️
+  String ready([dynamic obj, String domain]) {
+    obj ??= "ready";
+    return emo("⏲️", obj, domain);
+  }
 
   /// A simple message with no emoji
   String msg([dynamic obj, String domain]) => emo(null, obj, domain);
@@ -190,6 +206,9 @@ class EmoDebug {
     final msg = _getEmoString(emoji, obj, domain);
     if (!deactivatePrint) {
       print(msg);
+    }
+    if (hook != null) {
+      hook(msg);
     }
     return msg;
   }
