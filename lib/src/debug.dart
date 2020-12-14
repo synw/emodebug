@@ -1,10 +1,13 @@
+import 'package:meta/meta.dart';
+
 import 'types.dart';
 
 /// The debug printer
+@immutable
 class EmoDebug {
   /// Default constructor
   const EmoDebug(
-      {this.level,
+      {this.zone,
       this.hook,
       this.deactivatePrint = false,
       this.deactivateEmojis = false});
@@ -14,11 +17,11 @@ class EmoDebug {
   /// This will not print anything anymore
   final bool deactivatePrint;
 
-  /// The debug level
+  /// The debug zone
   ///
   /// An optional indication about a local debug area. It
   /// will prefix the messages
-  final String level;
+  final String zone;
 
   /// A hook to execute after each function call
   ///
@@ -47,8 +50,8 @@ class EmoDebug {
 
   /// A debug message for a database query
   ///
-  /// emoji: ❓
-  String query([dynamic obj, String domain]) => emo("❓", obj, domain);
+  /// emoji: 🗄️
+  String query([dynamic obj, String domain]) => emo("🗄️", obj, domain);
 
   /// A debug message for a dataset
   ///
@@ -190,6 +193,16 @@ class EmoDebug {
   /// emoji: <-
   String smallArrowOut([dynamic obj, String domain]) => emo("<-", obj, domain);
 
+  /// A debug message with an arrow
+  ///
+  /// emoji: 🔷
+  String requestGet([dynamic obj, String domain]) => emo("🔷", obj, domain);
+
+  /// A debug message with an arrow
+  ///
+  /// emoji: 🔶
+  String requestPost([dynamic obj, String domain]) => emo("🔶", obj, domain);
+
   /// A debug message for a ready state
   ///
   /// emoji: ⏲️
@@ -197,6 +210,21 @@ class EmoDebug {
     obj ??= "ready";
     return emo("⏲️", obj, domain);
   }
+
+  /// A debug message for a file
+  ///
+  /// emoji: 📃
+  String file([dynamic obj, String domain]) => emo("📃", obj, domain);
+
+  /// A debug message for a folder
+  ///
+  /// emoji: 📁
+  String folder([dynamic obj, String domain]) => emo("📁", obj, domain);
+
+  /// A debug message for a question
+  ///
+  /// emoji: ❓
+  String question([dynamic obj, String domain]) => emo("❓", obj, domain);
 
   /// A simple message with no emoji
   String msg([dynamic obj, String domain]) => emo(null, obj, domain);
@@ -219,6 +247,9 @@ class EmoDebug {
     if (!deactivatePrint) {
       print(msg);
     }
+    if (hook != null) {
+      hook(msg);
+    }
     return msg;
   }
 
@@ -227,6 +258,9 @@ class EmoDebug {
     final msg = "➖➖➖➖➖ $name ➖➖➖➖➖";
     if (!deactivatePrint) {
       print(msg);
+    }
+    if (hook != null) {
+      hook(msg);
     }
     return msg;
   }
@@ -239,8 +273,8 @@ class EmoDebug {
     if (!deactivateEmojis && emoji != null) {
       l.add("$emoji");
     }
-    if (level != null) {
-      l.add("[$level]");
+    if (zone != null) {
+      l.add("[$zone]");
     }
     if (domain != null) {
       final dm = '${domain[0].toUpperCase()}${domain.substring(1)}:';
