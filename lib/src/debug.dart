@@ -133,6 +133,16 @@ class EmoDebug {
   /// emoji: 🔑
   String key([dynamic obj, String domain]) => emo("🔑", obj, domain);
 
+  /// A debug message for an access token
+  ///
+  /// emoji: 🔑
+  String accessToken([dynamic obj, String domain]) => emo("🔑", obj, domain);
+
+  /// A debug message for an refresh token
+  ///
+  /// emoji: 🗝️
+  String refreshToken([dynamic obj, String domain]) => emo("🗝️", obj, domain);
+
   /// A debug message for an encryption operation
   ///
   /// emoji: 🎼
