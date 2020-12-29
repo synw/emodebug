@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0
+
+- Add some emo methods
+- Export types
+- Make the EmoDebug class immutable
+- Update dependencies
+- Add optional hooks for pipe to logging
+
 ## 0.4.0
 
 Add some emo methods
