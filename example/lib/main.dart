@@ -12,10 +12,10 @@ class CustomEmoDebug extends EmoDebug {
   const CustomEmoDebug();
 
   /// The crash method to indicate a program failure
-  void crash(dynamic obj, [String domain]) => emo("💥", obj, domain);
+  void crash(dynamic obj, [String? domain]) => emo("💥", obj, domain);
 
   /// The recovery method to indicate a program recovery
-  void recovery(dynamic obj, [String domain]) => emo("👍", obj, domain);
+  void recovery(dynamic obj, [String? domain]) => emo("👍", obj, domain);
 }
 
 void main() {

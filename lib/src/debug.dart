@@ -21,12 +21,12 @@ class EmoDebug {
   ///
   /// An optional indication about a local debug area. It
   /// will prefix the messages
-  final String zone;
+  final String? zone;
 
   /// A hook to execute after each function call
   ///
   /// Can be used to pipe the emodebug messages to logging
-  final EmoDebugHook hook;
+  final EmoDebugHook? hook;
 
   /// Deactivate the emojis
   ///
@@ -36,187 +36,187 @@ class EmoDebug {
   /// A debug message for a state operation
   ///
   /// emoji: 📢
-  String state([dynamic obj, String domain]) => emo("📢", obj, domain);
+  String state([dynamic obj, String? domain]) => emo("📢", obj, domain);
 
   /// A debug message for a save operation
   ///
   /// emoji: 💾
-  String save([dynamic obj, String domain]) => emo("💾", obj, domain);
+  String save([dynamic obj, String? domain]) => emo("💾", obj, domain);
 
   /// A debug message for a delete operation
   ///
   /// emoji: ❌
-  String delete([dynamic obj, String domain]) => emo("❌", obj, domain);
+  String delete([dynamic obj, String? domain]) => emo("❌", obj, domain);
 
   /// A debug message for a database query
   ///
   /// emoji: 🗄️
-  String query([dynamic obj, String domain]) => emo("🗄️", obj, domain);
+  String query([dynamic obj, String? domain]) => emo("🗄️", obj, domain);
 
   /// A debug message for a dataset
   ///
   /// emoji: 💼
-  String data([dynamic obj, String domain]) => emo("💼", obj, domain);
+  String data([dynamic obj, String? domain]) => emo("💼", obj, domain);
 
   /// A debug message representing a line
   ///
   /// emoji: ➖
-  String line([dynamic obj, String domain]) => emo("➖", obj, domain);
+  String line([dynamic obj, String? domain]) => emo("➖", obj, domain);
 
   /// A debug message for an initialization
   ///
   /// emoji: 🎬
-  String init([dynamic obj, String domain]) => emo("🎬", obj, domain);
+  String init([dynamic obj, String? domain]) => emo("🎬", obj, domain);
 
   /// A debug message for an update
   ///
   /// emoji: 🆙
-  String update([dynamic obj, String domain]) => emo("🆙", obj, domain);
+  String update([dynamic obj, String? domain]) => emo("🆙", obj, domain);
 
   /// A debug message for an ok state
   ///
   /// emoji: 🆗
-  String ok([dynamic obj, String domain]) => emo("🆗", obj, domain);
+  String ok([dynamic obj, String? domain]) => emo("🆗", obj, domain);
 
   /// A debug message for an build
   ///
   /// emoji: 🔧
-  String build([dynamic obj, String domain]) => emo("🔧", obj, domain);
+  String build([dynamic obj, String? domain]) => emo("🔧", obj, domain);
 
   /// A debug message for parameters
   ///
   /// emoji: 📥
-  String param([dynamic obj, String domain]) => emo("📥", obj, domain);
+  String param([dynamic obj, String? domain]) => emo("📥", obj, domain);
 
   /// A debug message for a class constructor
   ///
   /// emoji: 🛠️
-  String constructor([dynamic obj, String domain]) => emo("🛠️", obj, domain);
+  String constructor([dynamic obj, String? domain]) => emo("🛠️", obj, domain);
 
   /// A debug message for a time related operation
   ///
   /// emoji: ⏱️
-  String time([dynamic obj, String domain]) => emo("⏱️", obj, domain);
+  String time([dynamic obj, String? domain]) => emo("⏱️", obj, domain);
 
   /// A debug message for a not found status
   ///
   /// emoji: 🚫
-  String notFound([dynamic obj, String domain]) => emo("🚫", obj, domain);
+  String notFound([dynamic obj, String? domain]) => emo("🚫", obj, domain);
 
   /// A debug message for a found status
   ///
   /// emoji: 👁️‍🗨️
-  String found([dynamic obj, String domain]) => emo("👁️‍🗨️", obj, domain);
+  String found([dynamic obj, String? domain]) => emo("👁️‍🗨️", obj, domain);
 
   /// A debug message for a result
   ///
   /// emoji: 📌
-  String result([dynamic obj, String domain]) => emo("📌", obj, domain);
+  String result([dynamic obj, String? domain]) => emo("📌", obj, domain);
 
   /// A debug message for information an input operation
   ///
   /// emoji: 📥
-  String input([dynamic obj, String domain]) => emo("📥", obj, domain);
+  String input([dynamic obj, String? domain]) => emo("📥", obj, domain);
 
   /// A debug message for information an output operation
   ///
   /// emoji: 📤
-  String output([dynamic obj, String domain]) => emo("📤", obj, domain);
+  String output([dynamic obj, String? domain]) => emo("📤", obj, domain);
 
   /// A debug message for a function
   ///
   /// emoji: 💊
-  String function([dynamic obj, String domain]) => emo("💊", obj, domain);
+  String function([dynamic obj, String? domain]) => emo("💊", obj, domain);
 
   /// A debug message for a key
   ///
   /// emoji: 🔑
-  String key([dynamic obj, String domain]) => emo("🔑", obj, domain);
+  String key([dynamic obj, String? domain]) => emo("🔑", obj, domain);
 
   /// A debug message for an access token
   ///
   /// emoji: 🔑
-  String accessToken([dynamic obj, String domain]) => emo("🔑", obj, domain);
+  String accessToken([dynamic obj, String? domain]) => emo("🔑", obj, domain);
 
   /// A debug message for an refresh token
   ///
   /// emoji: 🗝️
-  String refreshToken([dynamic obj, String domain]) => emo("🗝️", obj, domain);
+  String refreshToken([dynamic obj, String? domain]) => emo("🗝️", obj, domain);
 
   /// A debug message for an encryption operation
   ///
   /// emoji: 🎼
-  String encrypt([dynamic obj, String domain]) => emo("🎼", obj, domain);
+  String encrypt([dynamic obj, String? domain]) => emo("🎼", obj, domain);
 
   /// A debug message for an decryption operation
   ///
   /// emoji: 🗝️
-  String decrypt([dynamic obj, String domain]) => emo("🗝️", obj, domain);
+  String decrypt([dynamic obj, String? domain]) => emo("🗝️", obj, domain);
 
   /// A debug message for a transmission operation
   ///
   /// emoji: 📡
-  String transmit([dynamic obj, String domain]) => emo("📡", obj, domain);
+  String transmit([dynamic obj, String? domain]) => emo("📡", obj, domain);
 
   /// A debug message for a start operation
   ///
   /// emoji: 🏁
-  String start([dynamic obj, String domain]) => emo("🏁", obj, domain);
+  String start([dynamic obj, String? domain]) => emo("🏁", obj, domain);
 
   /// A debug message for a stop operation
   ///
   /// emoji: 🛑
-  String stop([dynamic obj, String domain]) => emo("🛑", obj, domain);
+  String stop([dynamic obj, String? domain]) => emo("🛑", obj, domain);
 
   /// A debug message for an info
   ///
   /// emoji: ℹ️
-  String info([dynamic obj, String domain]) => emo("ℹ️", obj, domain);
+  String info([dynamic obj, String? domain]) => emo("ℹ️", obj, domain);
 
   /// A debug message for a warning
   ///
   /// emoji: 🔔
-  String warning([dynamic obj, String domain]) => emo("🔔", obj, domain);
+  String warning([dynamic obj, String? domain]) => emo("🔔", obj, domain);
 
   /// A debug message for a warning
   ///
   /// emoji: 💢
-  String error([dynamic obj, String domain]) => emo("💢", obj, domain);
+  String error([dynamic obj, String? domain]) => emo("💢", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: =>
-  String arrowIn([dynamic obj, String domain]) => emo("=>", obj, domain);
+  String arrowIn([dynamic obj, String? domain]) => emo("=>", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: <=
-  String arrowOut([dynamic obj, String domain]) => emo("<=", obj, domain);
+  String arrowOut([dynamic obj, String? domain]) => emo("<=", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: ->
-  String smallArrowIn([dynamic obj, String domain]) => emo("->", obj, domain);
+  String smallArrowIn([dynamic obj, String? domain]) => emo("->", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: <-
-  String smallArrowOut([dynamic obj, String domain]) => emo("<-", obj, domain);
+  String smallArrowOut([dynamic obj, String? domain]) => emo("<-", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: 🔷
-  String requestGet([dynamic obj, String domain]) => emo("🔷", obj, domain);
+  String requestGet([dynamic obj, String? domain]) => emo("🔷", obj, domain);
 
   /// A debug message with an arrow
   ///
   /// emoji: 🔶
-  String requestPost([dynamic obj, String domain]) => emo("🔶", obj, domain);
+  String requestPost([dynamic obj, String? domain]) => emo("🔶", obj, domain);
 
   /// A debug message for a ready state
   ///
   /// emoji: ⏲️
-  String ready([dynamic obj, String domain]) {
+  String ready([dynamic obj, String? domain]) {
     obj ??= "ready";
     return emo("⏲️", obj, domain);
   }
@@ -224,30 +224,28 @@ class EmoDebug {
   /// A debug message for a file
   ///
   /// emoji: 📃
-  String file([dynamic obj, String domain]) => emo("📃", obj, domain);
+  String file([dynamic obj, String? domain]) => emo("📃", obj, domain);
 
   /// A debug message for a folder
   ///
   /// emoji: 📁
-  String folder([dynamic obj, String domain]) => emo("📁", obj, domain);
+  String folder([dynamic obj, String? domain]) => emo("📁", obj, domain);
 
   /// A debug message for a question
   ///
   /// emoji: ❓
-  String question([dynamic obj, String domain]) => emo("❓", obj, domain);
+  String question([dynamic obj, String? domain]) => emo("❓", obj, domain);
 
   /// A simple message with no emoji
-  String msg([dynamic obj, String domain]) => emo(null, obj, domain);
+  String msg([dynamic obj, String? domain]) => emo(null, obj, domain);
 
   /// Print a debug message from an emoji
-  String emo(String emoji, [dynamic obj, String domain]) {
+  String emo(String? emoji, [dynamic obj, String? domain]) {
     final msg = _getEmoString(emoji, obj, domain);
     if (!deactivatePrint) {
       print(msg);
     }
-    if (hook != null) {
-      hook(msg);
-    }
+    hook?.call(msg);
     return msg;
   }
 
@@ -257,9 +255,7 @@ class EmoDebug {
     if (!deactivatePrint) {
       print(msg);
     }
-    if (hook != null) {
-      hook(msg);
-    }
+    hook?.call(msg);
     return msg;
   }
 
@@ -269,16 +265,14 @@ class EmoDebug {
     if (!deactivatePrint) {
       print(msg);
     }
-    if (hook != null) {
-      hook(msg);
-    }
+    hook?.call(msg);
     return msg;
   }
 
   /// A section end
   String sectionEnd() => sep();
 
-  String _getEmoString(String emoji, dynamic obj, String domain) {
+  String _getEmoString(String? emoji, dynamic obj, String? domain) {
     final l = <String>[];
     if (!deactivateEmojis && emoji != null) {
       l.add("$emoji");
