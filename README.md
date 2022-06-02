@@ -1,5 +1,7 @@
 # Emodebug
 
+## This repository has moved to https://github.com/teal-finance/emo
+
 [![pub package](https://img.shields.io/pub/v/emodebug.svg)](https://pub.dartlang.org/packages/emodebug) [![doc](https://img.shields.io/badge/api-documentation-informational.svg)](https://pub.dev/documentation/emodebug/latest/emodebug/EmoDebug-class.html#instance-methods)
 
 Emoji based semantic debuging:
